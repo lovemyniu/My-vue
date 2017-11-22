@@ -1,0 +1,49 @@
+body {
+  font-size: .12rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0; }
+
+.header {
+  line-height: .45rem;
+  background: #c9211a;
+  text-align: center;
+  color: #fff;
+  position: relative; }
+  .header i {
+    position: absolute;
+    right: .15rem;
+    top: .13rem; }
+
+.kcb-swiper {
+  height: 1.6rem;
+  border-bottom: 1px solid #ccc; }
+  .kcb-swiper .swiper-wrapper {
+    width: 100%;
+    height: 100%; }
+    .kcb-swiper .swiper-wrapper .swiper-slide img {
+      width: 100%;
+      height: 100%; }
+
+.kcb-money {
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  display: flex; }
+  .kcb-money dl:nth-child(1) {
+    border-right: 1px solid #ccc; }
+  .kcb-money dl {
+    flex: 1;
+    margin: .1rem 0;
+    box-sizing: border-box; }
+    .kcb-money dl dt {
+      padding-top: .1rem;
+      padding-left: .1rem; }
+    .kcb-money dl dd {
+      font-size: .16rem;
+      padding-top: .1rem;
+      padding-left: .1rem;
+      color: red;
+      font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */

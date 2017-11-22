@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        
+        .fade-transition {
+            transition: 1s all ease;
+        }
+        
+        .fade-enter {
+            opacity: 0;
+        }
+        
+        .fade-leave {
+            opacity: 0;
+            transform: translateX(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <input type="button" value="按钮" @click="toggle">
+        <div id="div1" v-show="bs" transition="fade"></div>
+    </div>
+</body>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    window.onload = function() {
+        new Vue({
+            el: '#box',
+            data: {
+                bs: true,
+            },
+            methods: {
+                toggle() {
+                    this.bs = !this.bs
+                }
+            }
+        })
+    }
+</script>
+
+</html>

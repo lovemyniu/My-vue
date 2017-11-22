@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+    <style lang="">
+        #box {
+            width: 200px;
+            margin: 0 auto;
+        }
+        
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <input type="button" value="按钮" @click="toggle">
+        <div id="div1" class="animated" v-show="bs" transition="bounce"></div>
+    </div>
+</body>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    window.onload = function() {
+        new Vue({
+            el: '#box',
+            data: {
+                bs: true,
+            },
+            methods: {
+                toggle() {
+                    this.bs = !this.bs
+                }
+            },
+            transitions: { //定义所有动画名称
+                bounce: {
+                    enterClass: 'swing',
+                    leaveClass: 'zoomOutRight'
+                }
+            }
+        })
+    }
+</script>
+
+</html>

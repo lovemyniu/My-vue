@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+    <template id="aaa">
+        <h1>111->{{msg}}</h1>
+        <bbb :m="msg"></bbb>
+    </template>
+</body>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            a: 'aaa'
+        },
+        components: {
+            "aaa": {
+                data() {
+                    return {
+                        msg: '我是父组件的值'
+                    }
+                },
+                template: '#aaa',
+                components: {
+                    'bbb': {
+                        props: ["m"],
+                        template: '<p>我是子组件——》{{m}}</p>'
+                    }
+                }
+            },
+
+
+        }
+    })
+</script>
+
+</html>

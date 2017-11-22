@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        .red {
+            color: red;
+        }
+        
+        .bule {
+            background: #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            new Vue({
+                el: '#box',
+                data: {
+                    josn: {
+                        red: true,
+                        bule: true
+                    }
+                },
+
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <strong :style="{color:'red',background:'#ccc'}">蚊子</strong>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+
+</html>

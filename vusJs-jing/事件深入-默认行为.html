@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+
+    </style>
+    <script>
+        window.onload = function() {
+            new Vue({
+                el: '#box',
+                data: {
+
+                },
+                methods: {
+                    show: function() {
+                        alert(2)
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="button" value="按钮" @contextmenu.prevent="show()">
+    </div>
+</body>
+<script src="js/vue.js"></script>
+
+</html>

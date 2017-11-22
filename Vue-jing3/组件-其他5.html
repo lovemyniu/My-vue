@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+</body>
+<script src="bower_components/vue/dist/vue.js"></script>
+<template id="aaa">
+    <h3>haohao</h3>
+    <ul>
+        <li v-for="(index,value) in arr">
+            {{value}}
+        </li>
+    </ul>
+</template>>
+
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+
+        },
+        components: {
+            "aaa": {
+                template: '#aaa',
+                data() {
+                    return {
+                        msg: '看真好的template',
+                        arr: ['apple', 'banana', 'orange']
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

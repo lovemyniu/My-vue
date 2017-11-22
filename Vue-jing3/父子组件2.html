@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子级相互传值</title>
+    <style lang="">
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+    <template id="aaa">
+        <span>我是父级组件</span>
+        <button>按钮</button>
+        <span>{{msg}}</span>
+        <bbb @child-z="get"></bbb>
+    </template>
+
+    <template id="ccc">
+          <br><br><br>
+        <span>我是子组件</span>
+        <button @click="send">send</button>
+    </template>
+</body>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            a: 'aaa'
+        },
+        components: {
+            "aaa": {
+                data() {
+                    return {
+                        msg: '我是父组件的值'
+                    }
+                },
+                methods: {
+                    get(zhi) {
+                        this.msg = zhi
+                    }
+                },
+                template: '#aaa',
+                components: {
+                    'bbb': {
+                        data() {
+                            return {
+                                k: '我是子组件的数据'
+                            }
+                        },
+                        methods: {
+                            send() {
+                                this.$emit('child-z', this.k)
+                            }
+                        },
+                        template: '#ccc'
+                    }
+                }
+            },
+
+
+        }
+    })
+</script>
+
+</html>
